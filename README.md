@@ -7,8 +7,7 @@ Author of py-rocket-base: Eli Holmes (NOAA)
 
 ## Description
 
-Echopype is a package built to enable interoperability and scalability in ocean sonar data processing. This Dockerfile creates an image that can be easily
-dropped into a Jupyter Hub for a geospatial environment with echopype.
+Echopype is a package built to enable interoperability and scalability in ocean sonar data processing. This Dockerfile creates an image that can be easily dropped into a Jupyter Hub for a geospatial environment with echopype. Click to see the [geospatial packages](https://github.com/nmfs-opensci/container-images/blob/main/images/py-rocket-geospatial-2/environment.yml) in the image.
 
 ## License
 
