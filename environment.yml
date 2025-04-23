@@ -1,0 +1,7 @@
+name: echopype
+channels:
+  - conda-forge
+  - nodefaults
+
+dependencies:
+  - echopype
