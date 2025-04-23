@@ -1,0 +1,28 @@
+name: Build and Push Docker Image
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - Dockerfile
+      - environment.yml
+      - apt.txt
+      - start
+      - install.R
+      - .github/workflows/build-and-push.yml
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Build and push Docker image using reusable action
+        uses: nmfs-opensci/container-images@main
+        with:
+          image_name: image-acoustics
+          image_dir: .
+          github_token: ${{ secrets.GITHUB_TOKEN }}

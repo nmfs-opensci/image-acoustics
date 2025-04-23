@@ -1,6 +1,0 @@
-# Add Dockerfile commands here to be added
-# Examples in the examples folder
-
-USER root
-ONBUILD COPY . /tmpbuild/
-ONBUILD RUN whoami && rm -rf /tmpbuild
