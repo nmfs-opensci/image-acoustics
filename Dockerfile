@@ -1,4 +1,7 @@
-FROM ghcr.io/nmfs-opensci/py-rocket-base:2025.04.17
+FROM ghcr.io/nmfs-opensci/container-images/py-rocket-geospatial-2:2025.04.17
+# The above results in a fully featured geospatial Python and R image
+# If you want a small image (2Gb) with no extra Python packages but still with R use this
+# FROM ghcr.io/nmfs-opensci/py-rocket-base:2025.04.17
 
 LABEL org.opencontainers.image.maintainers="eli.holmes@noaa.gov"
 LABEL org.opencontainers.image.authors="Wu-Jung Lee + echopype team"
