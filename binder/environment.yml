@@ -1,0 +1,22 @@
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - jupyter-resource-usage=1.*
+  - jupyterhub-singleuser=5.*
+  - notebook=6.*
+  ## Basic python stack
+  - numpy<2.0
+  - pandas
+  - matplotlib
+
+  # gh-scoped-creds allows users to securely push to GitHub from their repo.
+  - gh-scoped-creds
+  
+  ## JupyterLab extensions and helpers
+  - jupyterlab-git
+
+  ## VS Code support
+  - jupyter-vscode-proxy
+  - code-server>4.0
+  

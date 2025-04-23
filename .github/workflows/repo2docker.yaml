@@ -1,0 +1,33 @@
+name: build jupyterhub image
+on:
+  workflow_dispatch: null
+  push:
+    branch:
+      - main
+    paths:
+      - .github/workflows/repo2docker.yaml
+      - binder/apt.txt
+      - binder/environment.yml
+      - binder/start
+      - binder/appendix
+      - binder/postBuild
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout files in repo
+      uses: actions/checkout@main
+    - name: update jupyter dependencies with repo2docker
+      uses: jupyterhub/repo2docker-action@master
+      with:
+        DOCKER_USERNAME: ${{github.actor}}
+        DOCKER_PASSWORD: ${{secrets.GITHUB_TOKEN}}
+        DOCKER_REGISTRY: ghcr.io
+        IMAGE_NAME: nmfs-opensci/hub-image-template
+        APPENDIX_FILE: binder/appendix
+        # Next line is mandatory for a JupyterHub deployment since default is ${HOME}
+        # and that is wiped out if there is a persistent home directory
+        REPO_DIR: /srv/repo

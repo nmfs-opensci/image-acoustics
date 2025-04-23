@@ -1,0 +1,23 @@
+# Minimal system tools 
+# See the examples folder for a full example
+# But the full example take 18 min to build since it has TeX
+
+# Download tools
+curl
+wget
+
+# Core text editors on a *nix box: vim and emacs
+vim
+emacs-nox
+emacs-goodies-el
+nano
+
+# Regular build tools for compiling common stuff
+build-essential
+gfortran
+
+# # Other niceties for command-line work and life
+htop
+jq
+rsync
+tree

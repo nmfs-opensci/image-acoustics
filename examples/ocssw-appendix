@@ -1,0 +1,22 @@
+# This shows an example appendix file where we are installing the 
+# Ocean Color Science Software
+# https://oceancolor.gsfc.nasa.gov/docs/ocssw/
+# Add to binder and rename file to appendix. The utilities will be available from the command line
+
+ARG OCSSWTAG=V2024.1
+ARG OCSSWROOT=/opt/ocssw
+ARG OCVARROOT=${HOME}/shared/pace-hackweek-2024/ocssw/var
+ARG OCDATAROOT=${HOME}/shared/pace-hackweek-2024/ocssw/share
+ENV OCSSWROOT=${OCSSWROOT}
+
+# Install OCSSW core files (i.e. without $OCSSWROOT/share)
+USER root
+RUN /usr/bin/install -o ${NB_USER} -g ${NB_USER} -d ${OCSSWROOT}
+USER ${NB_USER}
+RUN wget https://oceandata.sci.gsfc.nasa.gov/manifest/install_ocssw && \
+    wget https://oceandata.sci.gsfc.nasa.gov/manifest/manifest.py && \
+    chmod +x install_ocssw && \
+    ./install_ocssw --tag=${OCSSWTAG} --root --bin --opt && \
+    ln -s ${OCDATAROOT} ${OCSSWROOT} && \
+    ln -s ${OCVARROOT} ${OCSSWROOT} && \
+    rm install_ocssw manifest.py
