@@ -2,6 +2,7 @@
 ![](https://ghcr-badge.egpl.dev/nmfs-opensci/image-acoustics/size?color=%2344cc11&tag=latest&label=image+size&trim=) <br/> ![](https://ghcr-badge.egpl.dev/nmfs-opensci/image-acoustics/latest_tag?color=%2344cc11&ignore=latest&label=version&trim=)
 
 Author of echopype: Wu-Jung Lee (UW) + echopype team
+
 Author of py-rocket-base: Eli Holmes (NOAA)
 
 ## Description
