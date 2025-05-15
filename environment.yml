@@ -5,3 +5,4 @@ channels:
 
 dependencies:
   - echopype==0.10.1
+  - jupyterlab-myst
