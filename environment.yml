@@ -4,5 +4,5 @@ channels:
   - nodefaults
 
 dependencies:
-  - echopype==0.10.1
+  - echopype==0.11.1
   - jupyterlab-myst
