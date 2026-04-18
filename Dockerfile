@@ -14,8 +14,6 @@ USER root
 
 # Copy the repo files into /tmp (conda-env/*.yml, install.R, etc)
 COPY . /tmp/
-# Fix permissions so NB_USER can write to /tmp/conda-env during package installs
-RUN chown -R ${NB_USER}:${NB_USER} /tmp/conda-env && chmod -R 755 /tmp/conda-env
 
 # Update conda env
 RUN set -eux; \
